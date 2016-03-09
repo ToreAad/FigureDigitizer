@@ -128,7 +128,7 @@ class LoadSVG(object):
         ListofCoordinates = []
         d_str = node.get("d")
        
-        assert ("C" not in d_str),"Error the node{} has C element in it".format(etree.tostring(node, method='html', pretty_print=True))
+        assert ("C" not in d_str),"Error the node{} has C element in it. That means that not all of the points in a path was corners, but could be smooth bezier curves or something.".format(etree.tostring(node, method='html', pretty_print=True))
         
         ListOfPoints = self._ParseD(d_str)
         for points in ListOfPoints:
