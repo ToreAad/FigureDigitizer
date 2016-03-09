@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Reset</_name>
+  <id>CrossSection.Reset</id>
+  <dependency type="executable" location="extensions">FigureDigitizer_Reset.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  
+  <!-- Note: If you don't define any param, the extension will run directly without any dialog box when it gets selected in the menu -->
+  
+  <param name="Notebook" type="notebook">
+	   <page name="help_tab" _gui-text="Help">
+		  <param name="helpDesc" type="description">Run to remove all attributes of the "Time-Analysis" name-space.</param>
+	   </page>
+  </param>
+  
+  <effect>
+	<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Figure-Digitizer"/>
+		</effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">FigureDigitizer_Reset.py</command>
+  </script>
+</inkscape-extension>

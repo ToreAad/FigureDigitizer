@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Define Surface</_name>
+  <id>CrossSection.DefineSurface</id>
+  <dependency type="executable" location="extensions">FigureDigitizer_Define_surface.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  
+  <!-- Note: If you don't define any param, the extension will run directly without any dialog box when it gets selected in the menu -->
+  
+  <param name="Notebook" type="notebook">
+	   <page name="Help" _gui-text="Help">
+		  <param name="helpDesc" type="description">Select polyline and polygons that represent a surface.</param>
+	   </page>
+	   	<page name="Options" _gui-text="Options">
+                <param name="SurfaceLabel" type="string" _gui-text="Label of surface"></param>
+                <param name="SurfaceType" type="string" _gui-text="Define surface type"></param>
+	   </page>
+  </param>
+  
+  <effect>
+	<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Figure-Digitizer">
+				<submenu _name="Cross-sections"/>
+			</submenu>
+		</effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">FigureDigitizer_Define_surface.py</command>
+  </script>
+</inkscape-extension>

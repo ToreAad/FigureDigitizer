@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Define Axis</_name>
+  <id>DefineAxis</id>
+  <dependency type="executable" location="extensions">FigureDigitizer_Define_axis.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  
+  <!-- Note: If you don't define any param, the extension will run directly without any dialog box when it gets selected in the menu -->
+
+  <param name="Notebook" type="notebook">
+	   <page name="Help" _gui-text="Help">
+		  <param name="helpDesc" type="description">Select line that represent a specific axis.</param>
+	   </page>
+	   <page name="Options" _gui-text="Options">
+		  <param name="AxisType" type="enum" _gui-text="Choose X or Y-axis">
+			<_item value="Xaxis">X-axis</_item>
+			<_item value="Yaxis">Y-axis</_item>
+		  </param>
+
+		  <param name="AxisScale" type="enum" _gui-text="Choose lin or log">
+			<_item value="Lin">Linear</_item>
+			<_item value="Log">Logarithmic</_item>
+		  </param>
+		  
+		  <param name="AxisDescription" type="string" _gui-text="Description of Axis"></param>
+			
+		  <param name="AxisUnit" type="string" _gui-text="Define unit represented by axis" />
+		  
+		  <param name="AxisLabel" type="string" _gui-text="Label of axis"></param>
+
+		  <param name="AxisMaxValue" type="string" _gui-text="The maximum value of axis"></param>
+
+		  <param name="AxisMinValue" type="string" _gui-text="The minimum value of axis"></param>
+		  
+	   </page>
+  </param>
+  
+  <effect>
+	<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Figure-Digitizer" />
+		</effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">FigureDigitizer_Define_axis.py</command>
+  </script>
+</inkscape-extension>

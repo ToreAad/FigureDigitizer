@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Define facies</_name>
+  <id>CrossSection.DefineFacies</id>
+  <dependency type="executable" location="extensions">FigureDigitizer_Define_facies.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  
+  <!-- Note: If you don't define any param, the extension will run directly without any dialog box when it gets selected in the menu -->
+  
+  <param name="Notebook" type="notebook">
+	   <page name="help" _gui-text="Help">
+		  <param name="helpDesc" type="description">Select polygons to represent facies.</param>
+	   </page>
+	   <page name="Options" _gui-text="Options">
+                <param name="FaciesLabel" type="string" _gui-text="Define label"></param>
+                <param name="FaciesType" type="string" _gui-text="Define type"></param>
+	   </page>
+  </param>
+  
+  <effect>
+	<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Figure-Digitizer">
+				<submenu _name="Cross-sections"/>
+			</submenu>
+		</effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">FigureDigitizer_Define_facies.py</command>
+  </script>
+</inkscape-extension>

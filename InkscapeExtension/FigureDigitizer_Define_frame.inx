@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<inkscape-extension xmlns="http://www.inkscape.org/namespace/inkscape/extension">
+  <_name>Define Frame</_name>
+  <id>CrossSection.DefineFrame</id>
+  <dependency type="executable" location="extensions">FigureDigitizer_Define_frame.py</dependency>
+  <dependency type="executable" location="extensions">inkex.py</dependency>
+  
+  <!-- Note: If you don't define any param, the extension will run directly without any dialog box when it gets selected in the menu -->
+
+  <param name="Notebook" type="notebook">
+	   <page name="Help" _gui-text="Help">
+		  <param name="helpDesc" type="description">Select rectangular path that bounds your data.</param>
+	   </page>
+  </param>
+  
+  <effect>
+	<object-type>all</object-type>
+		<effects-menu>
+			<submenu _name="Figure-Digitizer">
+				<submenu _name="Cross-sections"/>
+			</submenu>
+		</effects-menu>
+  </effect>
+  <script>
+    <command reldir="extensions" interpreter="python">FigureDigitizer_Define_frame.py</command>
+  </script>
+</inkscape-extension>
