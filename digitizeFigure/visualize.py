@@ -60,7 +60,7 @@ class DrawModel(Draw):
         ax = self._MakePlot(title)
         for surface in self.model.Surfaces.values():
             DrawSurface(surface).draw(ax)
-        for facies in self.model.Facies:
+        for facies in self.model.Facies.values():
             DrawFacies(facies).draw(ax)
         plt.show()
         

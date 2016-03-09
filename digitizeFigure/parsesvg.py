@@ -242,12 +242,13 @@ class LoadCrossSection(LoadSVG):
         string in path attribute. sends node to self.ParseFacies()
         returns a list of parsed surfaces.
         """
-        ListOfFacies = []
+        FaciesDic = {}
         for node in self.svg.iter():
             if node.get(inkex.addNS("Type","TimeAnalysis")) == "Facies":
                 Facies = self._ParseFacies(node)
-                ListOfFacies.append(Facies)
-        return ListOfFacies
+                f_label = Facies.Label
+                FaciesDic[f_label] = Facies
+        return FaciesDic
         
         
     def _ParseFacies(self,node):
